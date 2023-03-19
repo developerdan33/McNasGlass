@@ -179,7 +179,19 @@ nav
 	}
 }
 
-@media (min-width: 992px)
+@media (max-width: $lg)
+{
+	nav
+	{
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10000;
+	}
+}
+
+@media (min-width: $lg)
 {
 	nav
 	{

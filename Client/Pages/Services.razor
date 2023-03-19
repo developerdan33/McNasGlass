@@ -7,35 +7,37 @@
 
 <PageTitle>McNa's Glass - @pageName</PageTitle>
 
-<div id="services" class="panel">
-	<h1>@pageName</h1>
+<div id="services" class="page">
+	<div class="panel">
+		<h1>@pageName</h1>
 
-	<div class="divider divider-lg"></div>
+		<div class="divider divider-lg"></div>
 
-	<div id="services" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
-		@if (ServiceList?.Count > 0)
-		{
-			@foreach (Models.Service service in ServiceList)
+		<div id="services" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
+			@if (ServiceList?.Count > 0)
 			{
-				<div class="col">
-					<div class="card">
-						<img src="/images/services/@(service.ImageUrl)" alt="@service.Title"/>
+				@foreach (Models.Service service in ServiceList)
+				{
+					<div class="col">
+						<div class="card">
+							<img src="/images/services/@(service.ImageUrl)" alt="@service.Title"/>
 
-						<div class="card-body">
-							<h5 class="title">@service.Title</h5>
+							<div class="card-body">
+								<h5 class="title">@service.Title</h5>
 
-							<p class="text">
-								@service.Text
-							</p>
+								<p class="text">
+									@service.Text
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
+				}
 			}
-		}
-		else
-		{
-			<p>Loading...</p>
-		}
+			else
+			{
+				<p>Loading...</p>
+			}
+		</div>
 	</div>
 </div>
 
