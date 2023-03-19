@@ -103,3 +103,37 @@
 		}
 	}
 }
+
+/* Services */
+/*----------------------------------------------------------------------------------------------------*/
+
+#home-page
+{
+	#home-services
+	{
+		#tiles
+		{
+			.w-100
+			{
+				display:  none;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px)
+{
+	#home-page
+	{
+		#home-services
+		{
+			#tiles
+			{
+				.w-100
+				{
+					display:  block;
+				}
+			}
+		}
+	}
+}

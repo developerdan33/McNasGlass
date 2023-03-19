@@ -1,0 +1,65 @@
+/* Services */
+/*----------------------------------------------------------------------------------------------------*/
+
+.service
+{
+	margin-bottom: 1rem;
+
+	img
+	{
+		width: 100%;
+		height: auto;
+		margin-bottom: 1rem;
+	}
+
+	.title
+	{
+		font-size: 1rem;
+	}
+}
+
+#services
+{
+	> .col
+	{
+		margin-bottom: 2rem;
+
+	}
+	.card
+	{
+		img
+		{
+			width: 100%;
+			height: auto;
+		}
+
+		.card-body
+		{
+			.text
+			{
+			}
+		}
+	}
+}
+
+@media (max-width: 500px)
+{
+	.service
+	{
+		.title
+		{
+			font-size: 0.8rem;
+		}
+	}
+}
+
+@media (min-width: $sm)
+{
+	#services
+	{
+		.card
+		{
+			height: 100%;
+		}
+	}
+}
