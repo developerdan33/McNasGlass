@@ -3,9 +3,12 @@
 
 nav
 {
+	padding: 0 !important;
+
 	> .container
 	{
 		max-width: $max-width;
+		z-index: 1000;
 	}
 
 	.navbar-brand
@@ -14,6 +17,7 @@ nav
 		color: white;
 		transition: all .15s ease-in-out;
 		margin: 0;
+		z-index: 1000;
 
 		img
 		{
@@ -29,6 +33,7 @@ nav
 	.navbar-toggler
 	{
 		border: 0;
+		z-index: 1000;
 
 		span
 		{
@@ -81,12 +86,33 @@ nav
 		transform: translate(15%, 33%) rotate(-45deg);
 	}
 
+	.collapse:not(.show)
+	{
+		top: -55px;
+		z-index: 1;
+		display: block;
+	}
+
+	.navbar-collapse
+	{
+		transition: top 0.4s;
+		-webkit-transition: top 0.4s;
+		position: fixed;
+		left: 0px;
+		top: 56px;
+		right: 0;
+		background-color: $colour-primary !important;
+		z-index: 1;
+	}
+
 	.socials
 	{
 		margin: 0;
 		padding: 0;
 		list-style: none;
 		text-align: center;
+		z-index: 10000;
+		background-color: $colour-primary !important;
 
 		li
 		{
@@ -148,11 +174,6 @@ nav
 			li
 			{
 				width: 3rem;
-
-				a
-				{
-					padding: 0.5rem;
-				}
 			}
 		}
 	}
@@ -162,6 +183,8 @@ nav
 {
 	nav
 	{
+		padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x) !important;
+
 		.navbar-brand
 		{
 			padding: 0.1rem 1.5rem 0.3rem 0;
@@ -183,6 +206,18 @@ nav
 					padding: 0.5rem 1rem 0.1rem;
 				}
 			}
+		}
+
+		.collapse:not(.show)
+		{
+			top: 0;
+			z-index: 10000;
+			display: none;
+		}
+
+		.navbar-collapse
+		{
+			position: initial;
 		}
 	}	
 }
