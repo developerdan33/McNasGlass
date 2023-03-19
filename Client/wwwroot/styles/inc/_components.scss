@@ -1,0 +1,24 @@
+/* Components */
+/*----------------------------------------------------------------------------------------------------*/
+
+.divider
+{
+	border-bottom: 4px solid $colour-quaternary;
+	border-radius: 50%;
+	margin: 2rem auto 3rem;
+}
+
+.divider-lg
+{
+	width: 50%;
+}
+
+.divider-sm
+{
+	width: 25%;
+}
+
+.fa-star
+{
+	color: #fecc00;
+}
