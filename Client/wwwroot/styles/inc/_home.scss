@@ -1,0 +1,50 @@
+/* Home */
+/*----------------------------------------------------------------------------------------------------*/
+
+#home-page
+{
+	#banner
+	{
+		.carousel-item
+		{
+			.text
+			{
+				position: absolute;
+				top: 20%;
+				left: 45%;
+				right: 0rem;
+				background-color: rgba(0,0,0,.6);
+				width: 40rem;
+				color: white !important;
+				padding: 2rem;
+
+				h2
+				{
+					margin: 0;
+					padding: 1rem 0;
+				}
+
+				.btn
+				{
+					color: white !important;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 430px)
+{
+	#home-page
+	{
+		p
+		{
+			font-size: 1.2rem;
+		}
+
+		h2
+		{
+			font-size: 1.6rem;
+		}
+	}
+}
