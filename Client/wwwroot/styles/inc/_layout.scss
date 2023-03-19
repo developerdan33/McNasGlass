@@ -52,6 +52,28 @@ body
 	text-align: center;
 }
 
+@media (max-width: $xl)
+{
+	footer
+	{
+		.container-fluid
+		{
+			padding: 3rem 2rem 0;
+		}
+	}
+}
+
+@media (max-width: $lg)
+{
+	#app
+	{
+		.page
+		{
+			margin-top: 3.5rem;
+		}
+	}
+}
+
 /* Blazor */
 /*----------------------------------------------------------------------------------------------------*/
 
