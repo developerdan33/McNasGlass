@@ -3,18 +3,18 @@
 <div class="container-fluid g-0">
 	<nav class="navbar navbar-expand-lg bg-primary">
 		<div class="container">
-			<a class="navbar-brand order-1" href="/" @onclick="ToggleNavMenu">
+			<a class="navbar-brand order-1" href="/" @onclick="(() => ToggleNavMenu(true))">
 				<img src="/images/shared/logo_small.png" class="d-block d-lg-none" alt="McNa's Glass">
 				<img src="/images/shared/logo_header.svg" class="d-none d-lg-block" alt="McNa's Glass">
 			</a>
 
-			<button class="navbar-toggler @navBarToggler order-3" @onclick="ToggleNavMenu">
+			<button class="navbar-toggler @NavBarToggler order-3" @onclick="(() => ToggleNavMenu(false))">
 				<span class="icon-bar top-bar"></span>
 				<span class="icon-bar middle-bar"></span>
 				<span class="icon-bar bottom-bar"></span>
 			</button>
 
-			<div class="navbar-collapse order-3 @navBarCollapse" @onclick="ToggleNavMenu">
+			<div class="navbar-collapse order-3 @NavBarCollapse" @onclick="(() => ToggleNavMenu(false))">
 				<ul class="navbar-nav">
 					@foreach (MenuItem menuItem in MenuItems)
 					{
@@ -48,8 +48,40 @@
 @code
 {
 	private bool collapseNavMenu = true;
-	private string navBarToggler => collapseNavMenu ? "collapsed" : null;
-    private string navBarCollapse => collapseNavMenu ? "collapse" : null;
+	private string navBarToggler;
+    private string navBarCollapse;
+
+	public string NavBarToggler
+	{
+		get
+		{
+			if (collapseNavMenu == true)
+				return "collapsed";
+			else
+				return null;
+		}
+
+		set
+		{
+			navBarToggler = value;
+		}
+	}
+
+	public string NavBarCollapse
+	{
+		get
+		{
+			if (collapseNavMenu == true)
+				return "collapse";
+			else
+				return null;
+		}
+
+		set
+		{
+			navBarCollapse = value;
+		}
+	}
 
 	private List<MenuItem> MenuItems = new List<MenuItem>();
 
@@ -65,8 +97,11 @@
 		}
 	}
 
-    private void ToggleNavMenu()
+    private void ToggleNavMenu(bool homeLink)
     {
-        collapseNavMenu = !collapseNavMenu;
+		if (!homeLink)
+       		collapseNavMenu = !collapseNavMenu;
+		else
+			collapseNavMenu = true;
     }
 }
