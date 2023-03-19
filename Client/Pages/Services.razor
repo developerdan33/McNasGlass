@@ -1,4 +1,5 @@
 @page "/services"
+@inherits SharedComponentBase
 
 @{
 	string pageName = "Services";
@@ -12,146 +13,45 @@
 	<div class="divider divider-lg"></div>
 
 	<div id="services" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/24-hr-glass-repair.jpg" alt="24 Hour Glass Repair"/>
+		@if (ServiceList?.Count > 0)
+		{
+			@foreach (Models.Service service in ServiceList)
+			{
+				<div class="col">
+					<div class="card">
+						<img src="/images/services/@(service.ImageUrl)" alt="@service.Title"/>
 
-				<div class="card-body">
-					<h5 class="title">24 Hour Glass Repair</h5>
+						<div class="card-body">
+							<h5 class="title">@service.Title</h5>
 
-					<p class="text">
-						We operate 24/7 for emergency repairs and replacement glass.
-					</p>
+							<p class="text">
+								@service.Text
+							</p>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/window-door-instalation.jpg" alt="Window and Door Installation"/>
-
-				<div class="card-body">
-					<h5 class="title">Window and Door Installation</h5>
-
-					<p class="text">
-						Upgrading or building? We can supply and install windows and doors for residential and commercial fit-outs.
-					</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/window-door-replacement.jpg" alt="Window and Door Glass Replacement"/>
-
-				<div class="card-body">
-					<h5 class="title">Window and Door Glass Replacement</h5>
-
-					<p class="text">
-						Is your window cracked or broken? Do you need to replace your sliding door glass to meet Australian industry standards? Our quality glass will bring your home/office up to code.
-					</p>
-				</div>
-			</div>
-		</div>
-
-
-
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/shower-screens.jpg" alt="Shower Screens"/>
-
-				<div class="card-body">
-					<h5 class="title">Shower Screens</h5>
-
-					<p class="text">
-						Whether replacing glass, parts or seals, we have you covered for all your shower screen needs.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/security-screens.jpg" alt="Security Screens"/>
-
-				<div class="card-body">
-					<h5 class="title">Security Screens / Flyscreens</h5>
-
-					<p class="text">
-						Your safety is our priority; we can supply and install security screens for your peace of mind. We can also provide and install flyscreens to keep those critters out.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/wardrobe-sliding-doors.jpg" alt="Wardrobe Sliding Doors"/>
-
-				<div class="card-body">
-					<h5 class="title">Wardrobe Sliding Doors</h5>
-
-					<p class="text">
-						Are you renovating your bedroom? We have a range of options to spruce up your wardrobe.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/patio-enclosure.jpg" alt="Patio Enclosures"/>
-
-				<div class="card-body">
-					<h5 class="title">Patio Enclosures</h5>
-
-					<p class="text">
-						Do you have a patio you would like to enjoy all year round? Call us today to see what enclosure solutions we can offer.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/parts-replacement.jpg" alt="Parts Replacement"/>
-
-				<div class="card-body">
-					<h5 class="title">Parts Replacement & General Servicing</h5>
-
-					<p class="text">
-						Do your rollers need replacing, a lock not working or a window need re-sealing? We offer a repair service that is second to none.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/tinting.jpg" alt="Window Tinting"/>
-
-				<div class="card-body">
-					<h5 class="title">Window Tinting</h5>
-
-					<p class="text">
-						Reduce UV Rays, add privacy and, best of all, save on energy bills.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col">
-			<div class="card">
-				<img src="/images/services/mirrors.jpg" alt="Mirrors"/>
-
-				<div class="card-body">
-					<h5 class="title">Mirrors</h5>
-
-					<p class="text">
-						We can install mirrors in your bathroom, gym, office and more!
-					</p>
-				</div>
-			</div>
-		</div>
+			}
+		}
+		else
+		{
+			<p>Loading...</p>
+		}
 	</div>
 </div>
+
+@code
+{
+	private List<Models.Service> ServiceList = new List<Models.Service>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			ServiceList = await HttpClient.GetFromJsonAsync<List<Models.Service>>("/data/services.json");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine(ex.ToString());
+		}
+	}
+}
