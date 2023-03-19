@@ -1,14 +1,17 @@
 [
 	{
 		"title": "Family Owned",
-		"text": "McNa's Glass is a family-owned and operated company based in Eastern Heights, servicing the city of Ipswich and the greater region. We provide a genuine, quality service with a wealth of knowledge and experience within the glazing industry."
+		"text": "McNa's Glass is a family-owned and operated company based in Eastern Heights, servicing the city of Ipswich and the greater region. We provide a genuine, quality service with a wealth of knowledge and experience within the glazing industry.",
+		"icon": "fas fa-users"
 	},
 	{
 		"title": "24 Hour Service",
-		"text": "Broken glass can be a severe health hazard for you, your family or your business. Our professional glaziers are qualified and are on call <b>24/7 for emergency repair service.</b> You can rest assured we will clean up the site and dispose of glass, to eliminate further damage or harm."
+		"text": "Broken glass can be a severe health hazard for you, your family or your business. Our professional glaziers are qualified and are on call <b>24/7 for emergency repair service.</b> You can rest assured we will clean up the site and dispose of glass, to eliminate further damage or harm.",
+		"icon": "fas fa-clock"
 	},
 	{
 		"title": "Customer Service",
-		"text": "We pride ourselves on being a reliable, friendly, affordable service that has our customers' best interests at heart. Our staff will communicate honestly with you no matter the problem to achieve the best and safest solution."
+		"text": "We pride ourselves on being a reliable, friendly, affordable service that has our customers' best interests at heart. Our staff will communicate honestly with you no matter the problem to achieve the best and safest solution.",
+		"icon": "fas fa-headset"
 	}
 ]
