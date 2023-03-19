@@ -1,3 +1,5 @@
+@inherits SharedComponentBase
+
 <div class="container-fluid g-0">
 	<nav class="navbar navbar-expand-lg bg-primary">
 		<div class="container">
@@ -14,15 +16,12 @@
 
 			<div class="navbar-collapse order-3 @navBarCollapse" @onclick="ToggleNavMenu">
 				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="/about">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/services">Services</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/contact">Contact</a>
-					</li>
+					@foreach (MenuItem menuItem in MenuItems)
+					{
+						<li class="nav-item">
+							<a class="nav-link" href="@menuItem.Url">@menuItem.Name</a>
+						</li>
+					}
 				</ul>
 			</div>
 
@@ -49,9 +48,22 @@
 @code
 {
 	private bool collapseNavMenu = true;
-
 	private string navBarToggler => collapseNavMenu ? "collapsed" : null;
     private string navBarCollapse => collapseNavMenu ? "collapse" : null;
+
+	private List<MenuItem> MenuItems = new List<MenuItem>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			MenuItems = await HttpClient.GetFromJsonAsync<List<MenuItem>>("/data/nav.json");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine(ex.ToString());
+		}
+	}
 
     private void ToggleNavMenu()
     {
