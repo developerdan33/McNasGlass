@@ -1,0 +1,71 @@
+/* About */
+/*----------------------------------------------------------------------------------------------------*/
+
+#about
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	img
+	{
+		max-width: 16rem;
+		margin-bottom: 2rem;
+	}
+
+	#info
+	{
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+
+		h3
+		{
+			text-align: center;
+		}
+	}
+}
+
+@media (min-width: 576px)
+{
+	#about
+	{
+		flex-direction: row;
+		align-items: start;
+
+		img
+		{
+			margin-right: 2rem;
+		}
+
+		#info
+		{
+			h3
+			{
+				text-align: left;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px)
+{
+	#about
+	{
+		img
+		{
+			
+		}
+	}
+}
+
+@media (max-width: 500px)
+{
+	#about
+	{
+		img
+		{
+			
+		}
+	}
+}
