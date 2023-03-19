@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace McNasGlass.Web.Components.Shared;
+namespace McNasGlass.Web.Components;
 
 public class SharedComponentBase : LayoutComponentBase
 {

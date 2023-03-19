@@ -63,6 +63,10 @@
 		<div class="divider divider-lg"></div>
 
 		<div id="tiles" class="row justify-content-center">
+			@{
+				int servicesIndex = 0;
+			}
+
 			@foreach (Service service in Services)
 			{
 				<div class="col-4 col-md-3 col-lg">
@@ -72,6 +76,13 @@
 						<h5 class="title">@service.Title</h5>
 					</div>
 				</div>
+
+				if (servicesIndex == 4)
+				{
+					<div class="w-100"></div>
+				}
+
+				servicesIndex++;
 			}
 		</div>
 	</div>
