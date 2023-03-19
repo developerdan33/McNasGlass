@@ -1,0 +1,39 @@
+/* Contact */
+/*----------------------------------------------------------------------------------------------------*/
+
+#contact
+{
+	.buttons
+	{
+		display: flex;
+		flex-direction: column;
+		margin-top: 2rem;
+		
+		.btn
+		{
+			margin: 0.5rem 0;
+		}
+	}
+}
+
+@media (min-width: $sm)
+{
+	#contact
+	{
+		p
+		{
+			font-size: 1.2rem;
+		}
+
+		.buttons
+		{
+			flex-direction: row;
+			justify-content: center;
+			
+			.btn
+			{
+				margin: 0 1rem
+			}
+		}
+	}	
+}
