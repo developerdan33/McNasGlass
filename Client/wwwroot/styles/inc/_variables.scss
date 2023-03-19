@@ -1,0 +1,60 @@
+/* Colours */
+/*----------------------------------------------------------------------------------------------------*/
+
+$colour-primary: #2a3439;
+$colour-secondary: #2d8d2b;
+$colour-tertiary: #212e22;
+$colour-quaternary: #ffe400;
+$colour-light: #ebebeb;
+$colour-medium: #b7b7b7;
+$colour-dark: #6d6e6e;
+
+$colour-font: $colour-primary;
+
+$colour-title: #acacac;
+$colour-border: $colour-medium;
+
+$link-color: $colour-primary;
+$link-hover-color: white;
+
+$success: #198754;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: $colour-light;
+$dark: black;
+
+/* Bootstrap */
+/*----------------------------------------------------------------------------------------------------*/
+
+$theme-colors: (
+	"primary":    $colour-primary,
+	"secondary":  $colour-secondary,
+	"success":    $success,
+	"info":       $info,
+	"warning":    $warning,
+	"danger":     $danger,
+	"light":      $light,
+	"dark":       $dark
+);
+
+/* Type */
+/*----------------------------------------------------------------------------------------------------*/
+
+$font-size-base: 1rem;
+$line-height-base: 1.2;
+
+$title-font: 'Hightower', Garamond, serif, monospace;
+$body-font: 'Catamaran', Tahoma, Verdana, sans-serif, monospace;
+
+$max-width: 1200px;
+
+/* Breakpoints */
+/*----------------------------------------------------------------------------------------------------*/
+
+$xs: 575px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400;
