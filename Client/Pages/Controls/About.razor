@@ -1,0 +1,51 @@
+@inherits SharedComponentBase
+
+@if (AboutItems?.Count > 0)
+{
+	<h1>About</h1>
+
+	<div class="divider divider-lg"></div>
+
+	<div id="cards" class="row row-cols-1 row-cols-md-3 g-4">
+		@foreach (Models.About about in AboutItems)
+		{
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<i class="@about.Icon"></i>
+
+						<h5 class="card-title">@about.Title</h5>
+
+						<div class="divider divider-sm"></div>
+		
+						<p class="card-text">
+							@about.Text
+						</p>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+}
+else
+{
+	<p>Loading...</p>
+}
+
+
+@code
+{
+	private List<Models.About> AboutItems = new List<Models.About>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			AboutItems = await HttpClient.GetFromJsonAsync<List<Models.About>>("/data/about.json");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine(ex.ToString());
+		}
+	}
+}

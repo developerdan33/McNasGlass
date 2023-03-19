@@ -1,0 +1,72 @@
+@inherits SharedComponentBase
+
+@if (TestimonialsList?.Count > 0)
+{
+	<h1>Testimonials</h1>
+
+	<div class="divider divider-lg"></div>
+
+	<div id="reviews-carousel" class="carousel carousel-dark slide" data-bs-ride="true">
+		<div class="carousel-inner">
+			@{
+				int zeroIndex = 0;
+			}
+
+			@foreach (Testimonial testimonial in TestimonialsList)
+			{
+				<div class="carousel-item @(zeroIndex == 0 ? "active" : String.Empty)">
+					<div class="inner">
+						<h5 class="title">@testimonial.Title</h5>
+
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+
+						<p>
+							@testimonial.Text
+						</p>
+
+						<div class="name">- @testimonial.Author</div>
+					</div>
+				</div>
+
+				zeroIndex++;
+			}
+
+			<button class="carousel-control-prev" type="button" data-bs-target="#reviews-carousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#reviews-carousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+				</button>
+		</div>
+	</div>
+}
+else
+{
+	<p>Loading...</p>
+}
+
+
+@code
+{
+	private List<Models.Testimonial> TestimonialsList = new List<Models.Testimonial>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			TestimonialsList = await HttpClient.GetFromJsonAsync<List<Models.Testimonial>>("/data/testimonials.json");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine(ex.ToString());
+		}
+	}
+}

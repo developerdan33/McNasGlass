@@ -1,0 +1,54 @@
+@inherits SharedComponentBase
+
+@if (ServicesList?.Count > 0)
+{
+	<h1>Services</h1>
+
+	<div class="divider divider-lg"></div>
+
+	<div id="tiles" class="row justify-content-center">
+		@{
+			int servicesIndex = 0;
+		}
+
+		@foreach (Service service in ServicesList)
+		{
+			<div class="col-4 col-md-3 col-lg">
+				<div class="service">
+					<img src="/images/services/@(service.ImageUrl)" alt="@service.Title"/>
+
+					<h5 class="title">@service.Title</h5>
+				</div>
+			</div>
+
+			if (servicesIndex == 4)
+			{
+				<div class="w-100"></div>
+			}
+
+			servicesIndex++;
+		}
+	</div>
+}
+else
+{
+	<p>Loading...</p>
+}
+
+
+@code
+{
+	private List<Models.Service> ServicesList = new List<Models.Service>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			ServicesList = await HttpClient.GetFromJsonAsync<List<Models.Service>>("/data/services.json");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine(ex.ToString());
+		}
+	}
+}
