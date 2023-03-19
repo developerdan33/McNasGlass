@@ -137,3 +137,56 @@
 		}
 	}
 }
+
+/* Reviews */
+/*----------------------------------------------------------------------------------------------------*/
+
+#home-page
+{
+	#home-reviews
+	{
+		#reviews-carousel
+		{
+			min-height: 22rem;
+		}
+
+		.carousel-inner
+		{
+			padding: 0 5rem;
+
+			.title
+			{
+				margin-bottom: 1rem;
+			}
+
+			.stars
+			{
+				margin-bottom: 1rem;
+			}
+
+			.name
+			{
+				font-weight: 600;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px)
+{
+	#home-page
+	{
+		#home-reviews
+		{
+			#reviews-carousel
+			{
+				min-height: 11rem;
+			}
+			
+			.carousel-inner
+			{
+				padding: 0 10rem;
+			}
+		}
+	}
+}
