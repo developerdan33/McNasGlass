@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 6243 2912" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g id="Artboard1" transform="matrix(1,0,0,1,-4.36356,-1670.98)">
+        <rect x="4.364" y="1670.99" width="6242.47" height="2911.01" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <rect x="4.364" y="1670.99" width="6242.47" height="2911.01"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g id="Bcankround" transform="matrix(4.16667,0,0,4.16667,0.363555,0.984609)">
+                <g transform="matrix(1,0,0,0.467079,0,400.207)">
+                    <clipPath id="_clip2">
+                        <rect x="0" y="0.924" width="1500" height="1499.08"/>
+                    </clipPath>
+                    <g clip-path="url(#_clip2)">
+                        <rect x="0" y="0" width="1500" height="1500" style="fill:rgb(41,52,57);"/>
+                    </g>
+                </g>
+                <g transform="matrix(-1,0,0,0.857918,1500,213.123)">
+                    <rect x="0" y="0" width="1500" height="1500" style="fill:none;stroke:rgb(35,31,32);stroke-width:1.07px;"/>
+                </g>
+            </g>
+            <g id="Layer-3" serif:id="Layer 3" transform="matrix(4.16667,0,0,4.16667,0.363555,0.984609)">
+                <g transform="matrix(1.85585,0,0,0.54585,-641.826,344.166)">
+                    <path d="M372.619,1281.97L1127.47,1281.97L1127.47,215.742L372.619,215.742L372.619,1281.97ZM367.337,210.235L1132.66,210.235L1132.66,1288.04L367.337,1288.04L367.337,210.235Z" style="fill:white;fill-rule:nonzero;"/>
+                </g>
+                <g transform="matrix(0.784466,0,0,0.782525,499.637,564.071)">
+                    <path d="M0,471.817L-69.314,471.817L-69.314,188.846C-122.292,255.093 -171.964,317.205 -223.347,381.458C-274.679,317.33 -324.433,255.175 -376.964,189.549L-376.964,471.701L-447.178,471.701L-447.178,3.59C-445.878,2.481 -444.578,1.372 -443.279,0.263C-368.911,86.329 -298.553,175.839 -223.414,265.332C-150.042,176.43 -77.235,88.215 -4.429,0C-2.952,0.847 -1.476,1.694 0,2.541L0,471.817Z" style="fill:white;fill-rule:nonzero;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,18.0049,-370.192)">
+                    <text x="524.13px" y="1071.57px" style="font-family:'HighTowerText-Reg', 'High Tower Text', serif;font-size:202px;fill:white;">MCNA’S</text>
+                    <text x="518.32px" y="1302px" style="font-family:'HighTowerText-Reg', 'High Tower Text', serif;font-size:256px;fill:white;">GLASS</text>
+                </g>
+                <g transform="matrix(1.87001,0,0,0.523595,-652.646,360.912)">
+                    <path d="M1108.01,234.441L391.844,234.441L391.844,1263.75L1108.01,1263.75L1108.01,234.441ZM1114.14,1268.96L385.864,1268.96L385.864,229.319L1114.14,229.319L1114.14,1268.96Z" style="fill:rgb(192,193,196);fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
