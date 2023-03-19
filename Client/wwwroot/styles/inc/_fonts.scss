@@ -1,0 +1,24 @@
+/* Fonts */
+/*----------------------------------------------------------------------------------------------------*/
+
+// Hightower
+@font-face
+{
+	font-family: "hightower";
+	src: url("../font/hightower/Regular.ttf") format("truetype");
+}
+
+// Catamaran
+@font-face
+{
+	font-family: "catamaran";
+	src: url("../font/catamaran/Catamaran-Regular.ttf") format("trutype");
+	font-style: normal
+}
+
+@font-face
+{
+	font-family: "catamaran";
+	src: url("../font/catamaran/Catamaran-Bold.ttf") format("trutype");
+	font-weight: bold;
+}
