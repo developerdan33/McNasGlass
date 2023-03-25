@@ -1,10 +1,15 @@
 @page "/about"
 
 @{
-	string pageName = "About";
+	string pageName = "McNa's Glass - About";
 }
 
-<PageTitle>McNa's Glass - @pageName</PageTitle>
+<PageTitle>@pageName</PageTitle>
+
+<HeadContent>
+	<meta property="og:title" content="@pageName" />
+	<meta property="og:image" content="/images/about/about.jpg" />
+</HeadContent>
 
 <div class="page">
 	<div class="panel">
